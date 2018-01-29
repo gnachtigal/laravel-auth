@@ -113,6 +113,7 @@ class RegisterController extends Controller
             ]);
 
         $user->attachRole($role);
+        dd($user);
         $this->initiateEmailActivation($user);
 
         return $user;

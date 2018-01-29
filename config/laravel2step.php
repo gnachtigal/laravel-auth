@@ -8,7 +8,8 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'laravel2stepEnabled' => env('LARAVEL_2STEP_ENABLED', true),
+    // 'laravel2stepEnabled' => env('LARAVEL_2STEP_ENABLED', false),
+    'laravel2stepEnabled' => false,
 
     /*
     |--------------------------------------------------------------------------

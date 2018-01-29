@@ -45,9 +45,8 @@ class SocialController extends Controller
         $userCheck = User::where('email', '=', $socialUserObject->email)->first();
 
         $email = $socialUserObject->email;
-
         if (!$socialUserObject->email) {
-            $email = 'missing'.str_random(10);
+            $email =  'missing'.str_random(10).'@'.str_random(10).'.example.org';
         }
 
         if (empty($userCheck)) {
@@ -99,7 +98,8 @@ class SocialController extends Controller
 
                 // Twitter User Object details: https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/user-object
                 if ($socialData->provider == 'twitter') {
-                    $user->profile()->twitter_username = $socialUserObject->screen_name;
+                    // dd($socialUserObject);
+                    $user->profile()->twitter_username = $socialUserObject->nickname;
                 }
                 $user->profile->save();
 
